@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+	
+	<script type="text/babel">
+		class Vehicle{
+			constructor(description, wheels) {
+				this.description = description;
+				this.wheels = wheels;
+
+			}
+
+			describeYourself() {
+				console.log(`I am a ${this.description} with ${this.wheels} wheels.`);
+			}
+		}
+
+		var coolSkiVan = new Vehicle('yellow and hot', '4');
+
+		coolSkiVan.describeYourself();
+
+		class SemiTruck extends Vehicle{
+			constructor(){
+				super('Semi Truck', 18);
+			}
+
+		}
+
+		var groceryStoreSemi = new SemiTruck();
+		groceryStoreSemi.describeYourself();
+
+
+	</script>
+</head>
+<body>
+	
+	<section></section>
+</body>
+</html>

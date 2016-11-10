@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+	<script type="text/babel">
+	// for arrays
+		var cities = ["amsterdamn", "cleveland", "spokane", "detroit"];
+		cities[0];
+		cities[3];
+
+		var[first,,, forth,] = ["amsterdamn", "cleveland", "spokane", "detroit","Memphis"];
+
+	//for objects v1
+		var sandwich = {
+			title: "Reuben",
+			price: 7,
+			description: "Cleveland's favorite sandwich",
+			ingredients: ['bread', 'corned beef', 'thousand island dressing', 'sauerkraut']
+		};
+		console.log(sandwich.title);
+		console.log(sandwich.price);
+
+
+		//for objects v2
+		var {title, price} = {
+			title: "Reuben",
+			price: 7,
+			description: "Cleveland's favorite sandwich",
+			ingredients: ['bread', 'corned beef', 'thousand island dressing', 'sauerkraut']
+		};
+		console.log(title);
+		console.log(price);
+
+		//for objects v3
+		var vacation = {
+			destination: 'Chile',
+			travelers: 2,
+			activity: 'skiiing',
+			cost: '$4000'
+
+		};
+
+		function vacationMarketing({destination, activity}){
+			return `come to ${destination} and do some ${activity}`;
+		}
+
+		console.log(vacationMarketing(vacation));
+
+
+	</script>
+</head>
+<body>
+	
+	<section></section>
+</body>
+</html>

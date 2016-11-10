@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.16.0/polyfill.js"></script>
+	<script type="text/babel">
+		function* director(){
+			yield "Three";
+			yield "Two";
+			yield "one";
+			yield "Action!";
+		}
+
+		// so what is this doing - its assigning a function to a variable
+		var action = director();
+
+		console.log(action.next().value);
+		console.log(action.next().value);
+		console.log(action.next().value);
+		console.log(action.next().value);
+
+		function* eachItem(arr){
+			for(var i=0; i<arr.length; i++){
+				yield arr[i];
+			}
+		}
+
+		var letters = eachItem(['a', 'b', 'c', 'd', 'e', 'f']);
+		var abcs = setInterval(function(){
+			var letter = letters.next();
+			if (letter.done == true){
+				clearInterval(abcs);
+				console.log('now i know my abcs');
+			}else{
+				console.log(letter.value);
+			}
+		},
+
+			500);
+
+	</script>
+</head>
+<body>
+	
+	<section></section>
+</body>
+</html>

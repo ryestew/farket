@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>	
+
+	<script type="text/babel">
+		var Restaurant = React.createClass({
+			render: function() {
+				return (<div>
+					<h1>{this.props.name}</h1>
+					</div>)
+			}
+
+		});
+
+		class Restaurant2 extends React.Component{
+			// function declaration es6 - remove the word function and the colon
+			render() {
+				return (<div>
+					<h1>{this.props.name}</h1>
+					</div>)
+			}
+
+		}
+
+
+// the property is the name="Matie's"
+		React.render(<Restaurant name="Matie's Shrimp Shack"></Restaurant>, document.section.s1);
+		React.render(<Restaurant2 name="Batie's Shrimp Shack"></Restaurant2>, document.section.s2);
+
+	</script>
+
+</head>
+<body>
+	
+	<section class="s1"></section>
+	<section class="s1"></section>
+</body>
+</html>

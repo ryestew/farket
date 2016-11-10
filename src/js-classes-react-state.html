@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		section > div{
+			height: 100px;
+			width: 100px;
+			background-color: red;
+			float: left;
+			margin: 3px;
+			cursor: pointer;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>	
+
+	<script type="text/babel">
+		
+
+		class Restaurant extends React.Component{
+
+			constructor(){
+				super();
+				this.state = {
+					status: "not open"
+				};
+				this.openRestaurant = this.openRestaurant.bind(this);
+				this.closeRestaurant = this.closeRestaurant.bind(this);
+			}
+
+			openRestaurant(){
+				this.setState({
+					status: "open"
+				});
+			}
+
+			closeRestaurant(){
+				this.setState({
+					status: "not open"
+				});
+			}
+			// function declaration es6 - remove the word function and the colon
+			render() {
+				return (<div>
+					<h1>{this.props.name}</h1>
+					<p> the restaurant is {this.state.status} </p>
+					<button onClick={this.openRestaurant} >open restaurant</button>
+					<button onClick={this.closeRestaurant} >close restaurant</button>
+					</div>)
+			}
+
+		}
+
+
+
+		React.render(<Restaurant name="Batie's Shrimp Shack"></Restaurant>, document.body);
+
+	</script>
+
+</head>
+<body>
+	
+	<section></section>
+	
+</body>
+</html>
